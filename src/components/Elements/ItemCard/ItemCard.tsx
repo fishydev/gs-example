@@ -1,13 +1,13 @@
 import { RoundedProgressBar } from "@/components/Elements/RoundedProgressBar"
 
-type MovieCardProps = {
+type ItemCardProps = {
   title: string
   date: string
   rating: number
   image: string
 }
 
-export const MovieCard = (props: MovieCardProps) => {
+export const ItemCard = (props: ItemCardProps) => {
   return (
     <div className="flex-col h-[300px] w-[150px]">
       <div
