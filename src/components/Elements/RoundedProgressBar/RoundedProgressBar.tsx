@@ -1,4 +1,7 @@
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar"
+import {
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar"
 
 const progressColor = (percentage: number) => {
   if (percentage >= 0 && percentage <= 33) {
@@ -16,17 +19,23 @@ type RoundedProgressBarProps = {
 
 export const RoundedProgressBar = (props: RoundedProgressBarProps) => {
   return (
-    <CircularProgressbar
+    <CircularProgressbarWithChildren
       value={props.value}
-      text={`${props.value}%`}
+      background
+      backgroundPadding={8}
       styles={buildStyles({
         rotation: props.value / 100,
         strokeLinecap: "butt",
         pathTransitionDuration: 0.5,
         pathColor: progressColor(props.value),
-        textColor: progressColor(props.value),
-        textSize: "40px",
+        backgroundColor: "#0d1026",
       })}
-    />
+    >
+      <div className="flex align-middle justify-center">
+        <h1 className="text-xs" style={{ color: progressColor(props.value) }}>
+          {props.value}
+        </h1>
+      </div>
+    </CircularProgressbarWithChildren>
   )
 }
