@@ -11,7 +11,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
         <TopNavbar />
         <main className="flex-1 relative overflow-y-auto focus:outline-none">
-          <div className="max-w-7xl mx-auto">{children}</div>
+          <div>{children}</div>
         </main>
       </div>
     </div>
