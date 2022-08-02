@@ -1,3 +1,7 @@
 export const Header = () => {
-  return <p>Header</p>
+  return (
+    <div className="flex">
+      <img src="" alt="" />
+    </div>
+  )
 }
