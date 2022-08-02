@@ -4,6 +4,8 @@ import { ItemCard } from "@/components/Elements/ItemCard"
 import { SortAccordion } from "@/components/Accordions/SortAccordion"
 import { FilterAccordion } from "@/components/Accordions"
 
+import { Link } from "react-router-dom"
+
 export const TvPopular = () => {
   return (
     <div className="max-w-7xl mx-auto py-4">
@@ -13,9 +15,11 @@ export const TvPopular = () => {
           <FilterAccordion />
         </div>
         <div className="flex flex-wrap pl-4">
-          {getPopular().map((movie, index) => (
+          {getPopular().map((tv, index) => (
             <div className="mr-2">
-              <ItemCard {...movie} key={index} />
+              <Link to={`/tv/1`} key={index}>
+                <ItemCard {...tv} key={index} />
+              </Link>
             </div>
           ))}
         </div>
