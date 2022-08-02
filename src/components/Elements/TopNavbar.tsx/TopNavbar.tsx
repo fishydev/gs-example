@@ -16,7 +16,9 @@ export const TopNavbar = () => {
         <div className="h-full max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center text-slate-100">
-              <span className="text-xl mr-8">Movie DB</span>
+              <Link to={"/"}>
+                <span className="text-xl mr-8">Movie DB</span>
+              </Link>
               {navigationList.map((item, index) => (
                 <Link to={item.to} key={index}>
                   <span className="mx-2">{item.name}</span>
