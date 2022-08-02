@@ -7,6 +7,10 @@ import { Rings } from "react-loader-spinner"
 
 const { Home } = lazyImport(() => import("@/features/home"), "Home")
 const { TvRoutes } = lazyImport(() => import("@/features/tv"), "TvRoutes")
+const { MovieRoutes } = lazyImport(
+  () => import("@/features/movies"),
+  "MovieRoutes"
+)
 
 const App = () => {
   return (
@@ -31,6 +35,7 @@ export const publicRoutes = [
     children: [
       { path: "", element: <Home /> },
       { path: "/tv/*", element: <TvRoutes /> },
+      { path: "/movies/*", element: <MovieRoutes /> },
     ],
   },
 ]
