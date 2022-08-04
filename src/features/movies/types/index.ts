@@ -1,22 +1,23 @@
+import { PagedResult } from "@/types"
+
 export type Movie = {
-  posterPath?: string | null
-  adult?: boolean
-  overview?: string
-  releaseDate?: string
-  genreIds?: number[]
-  id?: number
-  originalTitle?: string
-  title?: string
-  backdropPath?: string | null
-  popularity?: number
-  voteCount?: number
-  video?: boolean
-  voteAverage?: number
+  adult: boolean
+  poster_path: string | null
+  backdrop_path: string | null
+  overview: string
+  release_date: string
+  id: number
+  original_language: string
+  original_title: string
+  title: string
+  media_type: string
+  genre_ids: number[]
+  popularity: number
+  video: boolean
+  vote_average: number
+  vote_count: number
 }
 
 export type MoviePopular = {
-  page: number
   results: Movie[]
-  totalResults: number
-  totalPages: number
-}
+} & PagedResult

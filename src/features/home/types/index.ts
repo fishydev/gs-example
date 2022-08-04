@@ -1,24 +1,16 @@
-export type TrendingItem = {
-  adult: boolean
-  poster_path: string | null
-  backdrop_path: string | null
-  overview: string
-  release_date: string
-  id: number
-  original_language: string
-  original_title: string
-  title: string
-  media_type: string
-  genre_ids: number[]
-  popularity: number
-  video: boolean
-  vote_average: number
-  vote_count: number
-}
+import { PagedResult } from "@/types"
+
+import { Tv } from "@/features/tv/types"
+import { Movie } from "@/features/movies/types"
 
 export type TrendingResult = {
-  page: number
-  results: TrendingItem[]
-  total_pages: number
-  total_results: number
-}
+  results: Tv[] | Movie[]
+} & PagedResult
+
+export type PopularMoviesResult = {
+  results: Movie[]
+} & PagedResult
+
+export type PopularTvResult = {
+  results: Tv[]
+} & PagedResult

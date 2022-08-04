@@ -1,7 +1,7 @@
 import { useTrending } from "../api/getTrending"
 
 import { Card } from "@/components/Elements/Card"
-import { RoundedProgressBar } from "@/components/Elements/RoundedProgressBar"
+import { MovieCardContent } from "./MovieCardContent"
 import { Selector, Option } from "./Selector"
 
 import { Link } from "react-router-dom"
@@ -35,26 +35,13 @@ export const Trending = () => {
         />
       </div>
       <div className="flex space-x-4 overflow-x-scroll h-[400px]">
-        {trendingQuery.data.results.map((movie) => (
-          <Link to={`/movies/1`} key={movie.id}>
+        {trendingQuery.data.results.map((show) => (
+          <Link
+            to={`/${show.media_type === "tv" ? "tv" : "movies"}/${show.id}`}
+            key={show.id}
+          >
             <Card>
-              <div className="flex-col h-[325px] w-[150px]">
-                {/* <div
-                  className="h-[225px] w-[150px] rounded-lg relative"
-                  style={{ backgroundImage: `url(${movie.image})` }}
-                > */}
-                <div className="h-[225px] w-[150px] rounded-lg relative">
-                  <div className="w-8 h-8 absolute bottom-3 right-3">
-                    <RoundedProgressBar
-                      value={Math.floor(movie.vote_average * 10)}
-                    />
-                  </div>
-                </div>
-                <div className="p-2">
-                  <p className="text-md">{movie.title}</p>
-                  <p className="text-md">{movie.release_date}</p>
-                </div>
-              </div>
+              <MovieCardContent {...show} />
             </Card>
           </Link>
         ))}

@@ -1,22 +1,23 @@
+import { PagedResult } from "@/types"
+
 export type Tv = {
-  posterPath: string | null
-  popularity: number
+  adult: boolean
+  backdrop_path: string | null
   id: number
-  backdropPath: string | null
-  voteAverage: number
-  overview: string
-  firstAirDate: string
-  originCountry: string[]
-  genreIds: number[]
-  originalLanguage: string
-  voteCount: number
   name: string
-  originalName: string
+  original_language: string
+  original_name: string
+  overview: string
+  poster_path: string | null
+  media_type: string
+  genre_ids: number[]
+  popularity: number
+  first_air_date: string
+  vote_average: number
+  vote_count: number
+  origin_country: string
 }
 
 export type TvPopular = {
-  page: number
   results: Tv[]
-  totalResults: number
-  totalPages: number
-}
+} & PagedResult
