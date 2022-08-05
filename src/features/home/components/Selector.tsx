@@ -2,13 +2,13 @@ import { useState } from "react"
 
 export type Option = {
   label: string
-  value: string | number
+  value: string
 }
 
 type SelectorProps = {
   options: Option[]
-  onChangeSelection: (value: string | number) => void
-  defaultValue?: string | number
+  onChangeSelection: (value: string) => void
+  defaultValue?: string
 }
 
 export const Selector = (props: SelectorProps) => {
