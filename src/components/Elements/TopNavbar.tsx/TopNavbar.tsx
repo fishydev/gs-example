@@ -26,7 +26,9 @@ export const TopNavbar = () => {
               ))}
             </div>
             <div className="flex items-center justify-end">
-              <FaGithub size="2em" />
+              <a href="https://github.com/fishydev/gs-example">
+                <FaGithub size="2em" />
+              </a>
             </div>
           </div>
         </div>
