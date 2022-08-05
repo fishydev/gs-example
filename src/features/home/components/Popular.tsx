@@ -1,11 +1,9 @@
-import { getPopular } from "../api/getPopular"
-
-import { ItemCard } from "@/components/Elements/ItemCard"
 import { Selector, Option } from "./Selector"
 
-import { Link } from "react-router-dom"
+import { useState } from "react"
 
-const movies = getPopular()
+import { ShowList } from "./ShowList"
+import { usePopular } from "../api/getPopular"
 
 const options = [
   { label: "On TV", value: "tv" },
@@ -13,8 +11,12 @@ const options = [
 ] as Option[]
 
 export const Popular = () => {
-  const handleChangeSelection = (value: string | number) => {
-    console.log(value)
+  const [popularMediaType, setPopularMediaType] = useState("tv")
+  const popularQuery = usePopular({ mediaType: popularMediaType })
+
+  const handleChangeSelection = (value: string) => {
+    // console.log(value)
+    setPopularMediaType(value)
   }
 
   return (
@@ -23,17 +25,14 @@ export const Popular = () => {
         <p className="text-xl mb-4 mr-5">What's Popular</p>
         <Selector
           options={options}
-          defaultValue={"tv"}
+          defaultValue={popularMediaType}
           onChangeSelection={handleChangeSelection}
         />
       </div>
-      <div className="flex space-x-4 overflow-x-scroll">
-        {movies.map((movie, index) => (
-          <Link to={`/movies/1`} key={index}>
-            <ItemCard {...movie} key={index} />
-          </Link>
-        ))}
-      </div>
+      <ShowList
+        isLoading={popularQuery.isLoading}
+        items={popularQuery.data?.results}
+      />
     </div>
   )
 }
