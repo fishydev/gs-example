@@ -1,3 +1,4 @@
+import { Cast } from "@/features/people/types"
 import { PagedResult } from "@/types"
 
 export type Tv = {
@@ -21,3 +22,13 @@ export type Tv = {
 export type TvPopular = {
   results: Tv[]
 } & PagedResult
+
+export type TvGenre = {
+  id: number
+  name: string
+}
+
+export type TvCredits = {
+  id: number
+  cast: Cast[]
+}

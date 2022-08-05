@@ -1,3 +1,4 @@
+import { Cast } from "@/features/people/types"
 import { PagedResult } from "@/types"
 
 export type Movie = {
@@ -21,3 +22,37 @@ export type Movie = {
 export type MoviePopular = {
   results: Movie[]
 } & PagedResult
+
+export type MovieGenre = {
+  id: number
+  name: string
+}
+
+export type MovieDetail = {
+  adult: boolean
+  backdrop_path: string | null
+  budget: number
+  genres: MovieGenre[]
+  homepage: string
+  id: number
+  imdb_id: string
+  original_language: string
+  original_title: string
+  overview: string
+  popularity: number
+  poster_path: string | null
+  release_date: string
+  revenue: number
+  runtime: number
+  status: string
+  tagline: string | null
+  title: string
+  video: boolean
+  vote_average: number
+  vote_count: number
+}
+
+export type MovieCredits = {
+  id: number
+  cast: Cast[]
+}

@@ -1,1 +1,2 @@
-export * from "./Detail"
+export * from "./CastWrapper"
+export * from "./Header"

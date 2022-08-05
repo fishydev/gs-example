@@ -7,7 +7,7 @@ export const MovieRoutes = () => {
   return (
     <Routes>
       <Route path="" element={<MoviePopular />} />
-      <Route path="/:showId" element={<MovieDetail />} />
+      <Route path="/:movieId" element={<MovieDetail />} />
     </Routes>
   )
 }
