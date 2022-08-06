@@ -30,6 +30,7 @@ export const Trending = () => {
       <ShowList
         items={trendingQuery.data?.results}
         isLoading={trendingQuery.isLoading}
+        mediaType={trendingMediaType}
       />
     </div>
   )

@@ -32,6 +32,7 @@ export const Popular = () => {
       <ShowList
         isLoading={popularQuery.isLoading}
         items={popularQuery.data?.results}
+        mediaType={popularMediaType}
       />
     </div>
   )

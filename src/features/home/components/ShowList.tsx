@@ -7,10 +7,11 @@ import { Tv } from "@/features/tv/types"
 type ShowListProps = {
   items?: Movie[] | Tv[]
   isLoading: boolean
+  mediaType: string
 }
 
 export const ShowList = (props: ShowListProps) => {
-  const { isLoading, items } = props
+  const { isLoading, items, mediaType } = props
   if (isLoading) {
     return <p>Loading...</p>
   }
@@ -23,7 +24,7 @@ export const ShowList = (props: ShowListProps) => {
     <div className="flex space-x-4 overflow-x-scroll h-[400px]">
       {items.map((show) => (
         <Link
-          to={`/${show.media_type === "tv" ? "tv" : "movies"}/${show.id}`}
+          to={`/${mediaType === "tv" ? "tv" : "movies"}/${show.id}`}
           key={show.id}
         >
           <Card>
