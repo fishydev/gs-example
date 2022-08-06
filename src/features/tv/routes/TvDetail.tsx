@@ -6,16 +6,24 @@ import { useTvDetail } from "../api/getDetail"
 
 export const TvDetail = () => {
   const { tvId } = useParams()
-  const movieDetailQuery = useTvDetail({ tvId: tvId as string })
-  const movieCreditQuery = useTvCredits({ tvId: tvId as string })
+  const tvDetailQuery = useTvDetail({ tvId: tvId as string })
+  const TvCreditQuery = useTvCredits({ tvId: tvId as string })
 
   return (
     <div className="w-full flex-col">
-      <Header />
+      <Header
+        isLoading={tvDetailQuery.isLoading}
+        backdrop={tvDetailQuery.data?.backdrop_path}
+        genres={tvDetailQuery.data?.genres}
+        overview={tvDetailQuery.data?.overview}
+        poster_path={tvDetailQuery.data?.poster_path}
+        tagline={tvDetailQuery.data?.tagline}
+        title={tvDetailQuery.data?.name}
+      />
       <div className="max-w-7xl mx-auto flex-col">
         <CastWrapper
-          isLoading={movieCreditQuery.isLoading}
-          items={movieCreditQuery.data?.cast}
+          isLoading={TvCreditQuery.isLoading}
+          items={TvCreditQuery.data?.cast}
         />
       </div>
     </div>

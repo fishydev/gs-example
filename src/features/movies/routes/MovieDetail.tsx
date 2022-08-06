@@ -11,7 +11,15 @@ export const MovieDetail = () => {
 
   return (
     <div className="w-full flex-col">
-      <Header />
+      <Header
+        isLoading={movieDetailQuery.isLoading}
+        backdrop={movieDetailQuery.data?.backdrop_path}
+        genres={movieDetailQuery.data?.genres}
+        overview={movieDetailQuery.data?.overview}
+        poster_path={movieDetailQuery.data?.poster_path}
+        tagline={movieDetailQuery.data?.tagline}
+        title={movieDetailQuery.data?.title}
+      />
       <div className="max-w-7xl mx-auto flex-col">
         <CastWrapper
           isLoading={movieCreditQuery.isLoading}
