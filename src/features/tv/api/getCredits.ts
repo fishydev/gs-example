@@ -6,7 +6,7 @@ import { ExtractFnReturnType, QueryConfig } from "@/lib/react-query"
 import { TvCredits } from "../types"
 
 export const getCredits = ({ tvId }: { tvId: string }): Promise<TvCredits> => {
-  return axiosInstance.get(`/tv/${tvId}`)
+  return axiosInstance.get(`/tv/${tvId}/credits`)
 }
 
 type QueryFnType = typeof getCredits
