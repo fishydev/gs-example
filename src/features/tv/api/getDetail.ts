@@ -3,9 +3,9 @@ import { useQuery } from "@tanstack/react-query"
 import { axiosInstance } from "@/lib/axios"
 import { ExtractFnReturnType, QueryConfig } from "@/lib/react-query"
 
-import { TvCredits } from "../types"
+import { TvDetail } from "../types"
 
-export const getDetail = ({ tvId }: { tvId: string }): Promise<TvCredits> => {
+export const getDetail = ({ tvId }: { tvId: string }): Promise<TvDetail> => {
   return axiosInstance.get(`/tv/${tvId}`)
 }
 
