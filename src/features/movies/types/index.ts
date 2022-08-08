@@ -56,3 +56,7 @@ export type MovieCredits = {
   id: number
   cast: Cast[]
 }
+
+export type QueryResult = {
+  results: Movie[]
+} & PagedResult

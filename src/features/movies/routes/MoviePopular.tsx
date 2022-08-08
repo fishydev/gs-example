@@ -1,12 +1,12 @@
-import { getPopular } from "../api/getPopular"
-
-import { ItemCard } from "@/components/Elements/ItemCard"
 import { SortAccordion } from "@/components/Accordions/SortAccordion"
 import { FilterAccordion } from "@/components/Accordions"
+import { ListWrapper } from "../components/ListWrapper"
 
-import { Link } from "react-router-dom"
+import { usePopularMovie } from "../api/getPopular"
 
 export const MoviePopular = () => {
+  const popularMovieQuery = usePopularMovie({})
+
   return (
     <div className="max-w-7xl mx-auto py-4">
       <div className="flex">
@@ -14,15 +14,10 @@ export const MoviePopular = () => {
           <SortAccordion />
           <FilterAccordion />
         </div>
-        <div className="flex flex-wrap pl-4">
-          {getPopular().map((movie, index) => (
-            <div className="mr-2">
-              <Link to={`/movies/1`} key={index}>
-                <ItemCard {...movie} key={index} />
-              </Link>
-            </div>
-          ))}
-        </div>
+        <ListWrapper
+          isLoading={popularMovieQuery.isLoading}
+          items={popularMovieQuery.data?.results}
+        />
       </div>
     </div>
   )
