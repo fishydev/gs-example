@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Movie Database Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Movie database website for a React learning project, all datas were obtained using [TMBd API](https://developers.themoviedb.org/3/getting-started/introduction). This is my attempt at using the React application architecture shown in [bulletproof-react](https://github.com/alan2207/bulletproof-react) repository
 
 ## Available Scripts
 
