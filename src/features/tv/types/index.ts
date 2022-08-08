@@ -65,3 +65,7 @@ export type TvSeason = {
   poster_path: string
   season_number: number
 }
+
+export type QueryResult = {
+  results: Tv[]
+} & PagedResult

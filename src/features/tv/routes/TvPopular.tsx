@@ -1,12 +1,11 @@
-import { getPopular } from "../api/getPopular"
-
-import { ItemCard } from "@/components/Elements/ItemCard"
 import { SortAccordion } from "@/components/Accordions/SortAccordion"
 import { FilterAccordion } from "@/components/Accordions"
+import { ListWrapper } from "../components/ListWrapper"
 
-import { Link } from "react-router-dom"
+import { usePopularTv } from "../api/getPopular"
 
 export const TvPopular = () => {
+  const popularTvQuery = usePopularTv({})
   return (
     <div className="max-w-7xl mx-auto py-4">
       <div className="flex">
@@ -14,15 +13,10 @@ export const TvPopular = () => {
           <SortAccordion />
           <FilterAccordion />
         </div>
-        <div className="flex flex-wrap pl-4">
-          {getPopular().map((tv, index) => (
-            <div className="mr-2">
-              <Link to={`/tv/1`} key={index}>
-                <ItemCard {...tv} key={index} />
-              </Link>
-            </div>
-          ))}
-        </div>
+        <ListWrapper
+          isLoading={popularTvQuery.isLoading}
+          items={popularTvQuery.data?.results}
+        />
       </div>
     </div>
   )
