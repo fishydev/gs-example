@@ -5,20 +5,28 @@ import { ExtractFnReturnType, QueryConfig } from "@/lib/react-query"
 
 import { QueryResult } from "../types"
 
-export const getPopularMovie = (): Promise<QueryResult> => {
-  return axiosInstance.get(`/movie/popular`)
+export const getPopularMovie = (pageNumber: number): Promise<QueryResult> => {
+  return axiosInstance.get(`/movie/popular`, {
+    params: {
+      page: pageNumber,
+    },
+  })
 }
 
 type QueryFnType = typeof getPopularMovie
 
 type UsePopularMovieOptions = {
+  pageNumber: number
   config?: QueryConfig<QueryFnType>
 }
 
-export const usePopularMovie = ({ config }: UsePopularMovieOptions) => {
+export const usePopularMovie = ({
+  config,
+  pageNumber,
+}: UsePopularMovieOptions) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     queryKey: ["popularMovie"],
-    queryFn: () => getPopularMovie(),
+    queryFn: () => getPopularMovie(pageNumber),
     ...config,
   })
 }

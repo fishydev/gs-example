@@ -24,14 +24,14 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <div
-      className="bg-no-repeat bg-cover text-slate-50 "
+      className="bg-no-repeat bg-cover text-slate-50 h-[500px]"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url('https://image.tmdb.org/t/p/w780${backdrop}')`,
       }}
     >
-      <div className="flex backdrop-blur-md p-10">
+      <div className="flex backdrop-blur-md p-10 h-full items-center justify-center">
         <img
-          className="rounded-sm max-h-[450px] mr-8"
+          className="rounded-sm h-[350px] mr-9"
           src={`https://image.tmdb.org/t/p/w185${poster_path}`}
           alt={`${title} Poster`}
         />
@@ -41,7 +41,7 @@ export const Header = (props: HeaderProps) => {
             {genres ? genres.map((genre) => genre.name).join(", ") : ""}
           </span>
           <div className="mb-8 flex items-center">
-            <div className="mr-4 w-14 h-1w-14">
+            <div className="mr-4 w-14">
               <RoundedProgressBar value={85} />
             </div>
             <span className="font-bold">User Score</span>

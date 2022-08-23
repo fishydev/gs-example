@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const navigationList = [
   { name: "Movies", to: "/movies" },
   { name: "TV Shows", to: "/tv" },
-  { name: "People", to: "/people" },
+  // { name: "People", to: "/people" },
 ]
 
 export const TopNavbar = () => {

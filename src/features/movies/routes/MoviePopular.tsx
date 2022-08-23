@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import { SortAccordion } from "@/components/Accordions/SortAccordion"
 import { FilterAccordion } from "@/components/Accordions"
 import { ListWrapper } from "../components/ListWrapper"
@@ -5,7 +7,9 @@ import { ListWrapper } from "../components/ListWrapper"
 import { usePopularMovie } from "../api/getPopular"
 
 export const MoviePopular = () => {
-  const popularMovieQuery = usePopularMovie({})
+  const [pageNumber, setPageNumber] = useState(1)
+
+  const popularMovieQuery = usePopularMovie({ pageNumber })
 
   return (
     <div className="max-w-7xl mx-auto py-4">

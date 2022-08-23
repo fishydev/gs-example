@@ -27,7 +27,7 @@ export const Banner = () => {
         <h2 className="text-2xl">
           Millions of movies, shows, and personalities to discover. Explore now.
         </h2>
-        <SearchButton />
+        {/* <SearchButton /> */}
       </div>
     </div>
   )
