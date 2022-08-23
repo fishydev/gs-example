@@ -10,11 +10,11 @@ export const SortAccordion = () => {
   return (
     <div className="w-full">
       <Card>
-        <div className="mx-auto w-full rounded-2xl bg-white p-2">
+        <div className="mx-auto w-full rounded-sm bg-white p-2">
           <Disclosure>
             {({ open }: AccordionProps) => (
               <>
-                <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                <Disclosure.Button className="flex w-full justify-between rounded-sm bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                   <span>Sort</span>
                   <ChevronRightIcon
                     className={`${

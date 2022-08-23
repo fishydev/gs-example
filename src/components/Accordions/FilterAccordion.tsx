@@ -9,7 +9,7 @@ export const FilterAccordion = () => {
   return (
     <div className="w-full">
       <Card>
-        <div className="mx-auto w-full rounded-2xl bg-white p-2">
+        <div className="mx-auto w-full rounded-sm bg-white p-2">
           <Disclosure>
             {({ open }: AccordionProps) => (
               <>

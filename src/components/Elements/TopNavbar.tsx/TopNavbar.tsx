@@ -12,10 +12,10 @@ const navigationList = [
 export const TopNavbar = () => {
   return (
     <header>
-      <div className="flex-none bg-slate-700 sticky top-0 z-30 py-2">
+      <div className="flex-none bg-white sticky top-0 z-30 py-2">
         <div className="h-full max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
-            <div className="flex items-center justify-center text-slate-100">
+            <div className="flex items-center justify-center text-black">
               <Link to={"/"}>
                 <span className="text-xl mr-8">Movie DB</span>
               </Link>
@@ -27,7 +27,7 @@ export const TopNavbar = () => {
             </div>
             <div className="flex items-center justify-end">
               <a href="https://github.com/fishydev/gs-example">
-                <FaGithub size="2em" />
+                <FaGithub size="2em" color="black" />
               </a>
             </div>
           </div>

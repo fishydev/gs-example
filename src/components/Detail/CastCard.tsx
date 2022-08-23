@@ -10,9 +10,9 @@ export const CastCard = (props: CastCardProps) => {
   const { character, name, profile_path } = props
   return (
     <Card>
-      <div className="flex flex-col">
+      <div className="flex flex-col max-w-[150px]">
         <div
-          className={`h-[225px] w-[150px] bg-contain rounded-t-lg`}
+          className={`h-[225px] w-[150px] bg-contain rounded-t-sm`}
           style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/w185/${profile_path})`,
           }}

@@ -26,12 +26,12 @@ export const Header = (props: HeaderProps) => {
     <div
       className="bg-no-repeat bg-cover text-slate-50 "
       style={{
-        backgroundImage: `url('https://image.tmdb.org/t/p/w780${backdrop}')`,
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url('https://image.tmdb.org/t/p/w780${backdrop}')`,
       }}
     >
       <div className="flex backdrop-blur-md p-10">
         <img
-          className="rounded-lg max-h-[450px] mr-8"
+          className="rounded-sm max-h-[450px] mr-8"
           src={`https://image.tmdb.org/t/p/w185${poster_path}`}
           alt={`${title} Poster`}
         />

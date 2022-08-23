@@ -1,11 +1,13 @@
+import BannerBackground from "@/assets/home-banner.jpg"
+
 const SearchButton = () => {
   return (
     <div className="h-12 flex mt-8">
       <input
         type="text"
-        className="p-4 w-80 bg-slate-50 flex-grow rounded-l-lg"
+        className="p-4 w-80 bg-slate-50 flex-grow rounded-l-sm text-black"
       ></input>
-      <button className="w-20 bg-red-700 text-slate-50 rounded-r-lg">
+      <button className="w-20 bg-rose-600 text-slate-50 rounded-r-sm">
         Search
       </button>
     </div>
@@ -14,12 +16,19 @@ const SearchButton = () => {
 
 export const Banner = () => {
   return (
-    <div className="flex-col bg-gradient-to-br from-red-600 to-orange-500 p-8">
-      <h1 className="text-5xl">Welcome.</h1>
-      <h2 className="text-2xl">
-        Millions of movies, shows, and personalities to discover. Explore now.
-      </h2>
-      <SearchButton />
+    <div
+      className="flex bg-gradient-to-b from-zinc-700 to-black bg-cover h-[768px] justify-center items-center"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(${BannerBackground})`,
+      }}
+    >
+      <div className="flex-col max-w-7xl items-center align-middle">
+        <h1 className="text-5xl">Welcome.</h1>
+        <h2 className="text-2xl">
+          Millions of movies, shows, and personalities to discover. Explore now.
+        </h2>
+        <SearchButton />
+      </div>
     </div>
   )
 }

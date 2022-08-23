@@ -23,12 +23,12 @@ export const CardContent = (props: MovieCardContentProps) => {
   return (
     <div className="flex-col h-[325px] w-[150px]">
       <div
-        className="h-[225px] w-[150px] rounded-t-lg relative bg-contain"
+        className="h-[225px] w-[150px] rounded-t-sm relative bg-contain"
         style={{
           backgroundImage: `url(http://image.tmdb.org/t/p/w500/${poster_path})`,
         }}
       >
-        {/* <div className="h-[225px] w-[150px] rounded-lg relative"> */}
+        {/* <div className="h-[225px] w-[150px] rounded-sm relative"> */}
         <div className="w-8 h-8 absolute bottom-3 right-3">
           <RoundedProgressBar value={Math.floor(vote_average * 10)} />
         </div>

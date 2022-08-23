@@ -22,17 +22,17 @@ export const Selector = (props: SelectorProps) => {
   }
 
   return (
-    <div className="border-amber-600 border rounded-full flex h-7 mt-1">
+    <div className="border-rose-600 border rounded-full flex h-7 mt-1">
       {props.options.map((selection) => (
-        <div
+        <button
           className={`font-bold px-2 rounded-full ${
-            selected === selection.value ? "text-slate-50 bg-amber-600" : ""
+            selected === selection.value ? "text-slate-50 bg-rose-600" : ""
           }`}
           onClick={() => handleChangeSelection(selection)}
           key={selection.value}
         >
           {selection.label}
-        </div>
+        </button>
       ))}
     </div>
   )
