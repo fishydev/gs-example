@@ -20,9 +20,9 @@ export const ListWrapper = (props: ListWrapperProps) => {
   }
 
   return (
-    <div className="flex flex-wrap pl-4">
+    <div className="flex flex-wrap md:pl-4 justify-between">
       {items.map((show) => (
-        <Card className="mr-2 mb-2" key={show.id}>
+        <Card className="mb-2 w-[150px] md:w-[200px]" key={show.id}>
           <Link to={`${show.id}`}>
             <CardContent {...show} />
           </Link>

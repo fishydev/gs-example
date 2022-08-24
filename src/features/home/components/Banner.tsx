@@ -17,12 +17,12 @@ const SearchButton = () => {
 export const Banner = () => {
   return (
     <div
-      className="flex bg-gradient-to-b from-zinc-700 to-black bg-cover h-[768px] justify-center items-center"
+      className="flex bg-gradient-to-b from-zinc-700 to-black bg-center h-[768px] justify-center items-center"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(${BannerBackground})`,
       }}
     >
-      <div className="flex-col max-w-7xl items-center align-middle">
+      <div className="flex-col max-w-7xl items-center align-middle p-8">
         <h1 className="text-5xl">Welcome.</h1>
         <h2 className="text-2xl">
           Millions of movies, shows, and personalities to discover. Explore now.

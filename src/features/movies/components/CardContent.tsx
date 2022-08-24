@@ -21,9 +21,9 @@ export const CardContent = (props: MovieCardContentProps) => {
     first_air_date,
   } = props
   return (
-    <div className="flex-col h-[400px] w-[200px] mr-10">
+    <div className="flex-col w-full">
       <div
-        className="h-[300px] w-[200px] rounded-sm relative bg-contain"
+        className="aspect-[2/3] rounded-sm relative bg-contain"
         style={{
           backgroundImage: `url(http://image.tmdb.org/t/p/w500/${poster_path})`,
         }}
@@ -33,7 +33,7 @@ export const CardContent = (props: MovieCardContentProps) => {
           <RoundedProgressBar value={Math.floor(vote_average * 10)} />
         </div>
       </div>
-      <div className="p-2">
+      <div className="p-2 h-[100px]">
         <p className="text-sm font-bold text-rose-600">
           {title ? title : name}
         </p>

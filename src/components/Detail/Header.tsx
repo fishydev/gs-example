@@ -24,18 +24,18 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <div
-      className="bg-no-repeat bg-cover text-slate-50 h-[500px]"
+      className="bg-no-repeat bg-cover text-slate-50 h-screen md:h-[500px]"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url('https://image.tmdb.org/t/p/w780${backdrop}')`,
       }}
     >
-      <div className="flex backdrop-blur-md p-10 h-full items-center justify-center">
+      <div className="flex flex-col md:flex-row backdrop-blur-md p-10 h-full items-center justify-center">
         <img
           className="rounded-sm h-[350px] mr-9"
           src={`https://image.tmdb.org/t/p/w185${poster_path}`}
           alt={`${title} Poster`}
         />
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center mt-8 md:mt-0">
           <span className="mb-2 text-4xl font-bold">{title}</span>
           <span className="mb-4 text-md">
             {genres ? genres.map((genre) => genre.name).join(", ") : ""}
