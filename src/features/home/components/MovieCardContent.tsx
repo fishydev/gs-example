@@ -23,7 +23,7 @@ export const MovieCardContent = (props: MovieCardContentProps) => {
   return (
     <div className="flex-col h-[325px] w-[150px]">
       <div
-        className="h-[225px] w-[150px] rounded-t-sm relative bg-contain"
+        className="h-[225px] w-[150px] rounded-sm relative bg-contain"
         style={{
           backgroundImage: `url(http://image.tmdb.org/t/p/w500/${poster_path})`,
         }}
@@ -34,8 +34,10 @@ export const MovieCardContent = (props: MovieCardContentProps) => {
         </div>
       </div>
       <div className="p-2">
-        <p className="text-sm font-bold">{title ? title : name}</p>
-        <p className="text-sm">
+        <p className="text-sm font-bold text-rose-600">
+          {title ? title : name}
+        </p>
+        <p className="text-sm font-thin">
           {formatDate(
             release_date
               ? (release_date as string)
