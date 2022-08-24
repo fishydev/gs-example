@@ -6,7 +6,11 @@ import { ExtractFnReturnType, QueryConfig } from "@/lib/react-query"
 import { QueryResult } from "../types"
 
 export const getPopularMovie = (pageNumber: number): Promise<QueryResult> => {
-  return axiosInstance.get(`/movie/popular?page=${pageNumber}`)
+  return axiosInstance.get(`/movie/popular`, {
+    params: {
+      page: pageNumber,
+    },
+  })
 }
 
 type QueryFnType = typeof getPopularMovie
