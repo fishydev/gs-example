@@ -14,7 +14,7 @@ export const TopNavbar = () => {
     <header>
       <div className="flex-none bg-white sticky top-0 z-30 py-2">
         <div className="h-full max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between px-4">
             <div className="flex items-center justify-center text-black">
               <Link to={"/"}>
                 <span className="text-xl mr-8">Movie DB</span>
