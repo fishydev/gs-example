@@ -1,15 +1,22 @@
 import { useState } from "react"
 
-import { SortAccordion } from "@/components/Accordions/SortAccordion"
+import { Pagination } from "@/components/Pagination"
+import { SortAccordion } from "@/components/Accordions"
 import { FilterAccordion } from "@/components/Accordions"
 import { ListWrapper } from "../components/ListWrapper"
 
 import { usePopularMovie } from "../api/getPopular"
 
+import { PageChangeEvent } from "@/components/Pagination"
+
 export const MoviePopular = () => {
   const [pageNumber, setPageNumber] = useState(1)
 
-  const popularMovieQuery = usePopularMovie({ pageNumber })
+  const popularMovieQuery = usePopularMovie({ pageNumber: pageNumber })
+
+  const handlePageChange = (event: PageChangeEvent) => {
+    setPageNumber(event.selected + 1)
+  }
 
   return (
     <div className="max-w-7xl mx-auto py-4">
@@ -18,10 +25,16 @@ export const MoviePopular = () => {
           <SortAccordion />
           <FilterAccordion />
         </div>
-        <ListWrapper
-          isLoading={popularMovieQuery.isLoading}
-          items={popularMovieQuery.data?.results}
-        />
+        <div className="flex flex-col">
+          <ListWrapper
+            isLoading={popularMovieQuery.isLoading}
+            items={popularMovieQuery.data?.results}
+          />
+          <Pagination
+            pageCount={popularMovieQuery.data?.total_pages}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
     </div>
   )
