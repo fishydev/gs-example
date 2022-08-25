@@ -2,7 +2,7 @@ import { Selector, Option } from "./Selector"
 
 import { useState } from "react"
 
-import { ShowList } from "./ShowList"
+import { ListWrapper } from "./ListWrapper"
 import { usePopular } from "../api/getPopular"
 
 const options = [
@@ -29,7 +29,7 @@ export const Popular = () => {
           onChangeSelection={handleChangeSelection}
         />
       </div>
-      <ShowList
+      <ListWrapper
         isLoading={popularQuery.isLoading}
         items={popularQuery.data?.results}
         mediaType={popularMediaType}

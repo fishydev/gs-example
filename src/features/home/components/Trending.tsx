@@ -1,7 +1,7 @@
 import { useTrending } from "../api/getTrending"
 
 import { Selector, Option } from "./Selector"
-import { ShowList } from "./ShowList"
+import { ListWrapper } from "./ListWrapper"
 import { useState } from "react"
 
 const options = [
@@ -27,7 +27,7 @@ export const Trending = () => {
           onChangeSelection={handleChangeSelection}
         />
       </div>
-      <ShowList
+      <ListWrapper
         items={trendingQuery.data?.results}
         isLoading={trendingQuery.isLoading}
         mediaType={trendingMediaType}
