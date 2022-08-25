@@ -3,6 +3,7 @@ import { Card } from "@/components/Elements/Card"
 import { CardContent } from "./CardContent"
 import { Movie } from "@/features/movies/types"
 import { Tv } from "@/features/tv/types"
+import { generateCardPlaceholders } from "@/components/Placeholders"
 
 type ListWrapperProps = {
   items?: Movie[] | Tv[]
@@ -11,8 +12,13 @@ type ListWrapperProps = {
 
 export const ListWrapper = (props: ListWrapperProps) => {
   const { isLoading, items } = props
+
   if (isLoading) {
-    return <p>Loading...</p>
+    return (
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 md:ml-4">
+        {generateCardPlaceholders(20)}
+      </div>
+    )
   }
 
   if (!items) {
@@ -20,9 +26,9 @@ export const ListWrapper = (props: ListWrapperProps) => {
   }
 
   return (
-    <div className="flex flex-wrap md:pl-4 justify-between">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 md:ml-4">
       {items.map((show) => (
-        <Card className="mb-2 w-[150px] md:w-[200px]" key={show.id}>
+        <Card key={show.id}>
           <Link to={`${show.id}`}>
             <CardContent {...show} />
           </Link>

@@ -25,7 +25,7 @@ export const MoviePopular = () => {
           <SortAccordion />
           <FilterAccordion />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col grow">
           <ListWrapper
             isLoading={popularMovieQuery.isLoading}
             items={popularMovieQuery.data?.results}

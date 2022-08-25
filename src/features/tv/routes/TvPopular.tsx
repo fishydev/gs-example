@@ -25,7 +25,7 @@ export const TvPopular = () => {
           <SortAccordion />
           <FilterAccordion />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col grow">
           <ListWrapper
             isLoading={popularTvQuery.isLoading}
             items={popularTvQuery.data?.results}
