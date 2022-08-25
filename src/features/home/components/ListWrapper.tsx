@@ -28,11 +28,8 @@ export const ListWrapper = (props: ListWrapperProps) => {
   return (
     <div className="flex space-x-4 overflow-x-scroll h-[400px]">
       {items.map((show) => (
-        <Card>
-          <Link
-            to={`/${mediaType === "tv" ? "tv" : "movies"}/${show.id}`}
-            key={show.id}
-          >
+        <Card key={show.id}>
+          <Link to={`/${mediaType === "tv" ? "tv" : "movies"}/${show.id}`}>
             <MovieCardContent {...show} />
           </Link>
         </Card>
