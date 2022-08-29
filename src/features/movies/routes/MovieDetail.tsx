@@ -21,10 +21,13 @@ export const MovieDetail = () => {
         title={movieDetailQuery.data?.title}
       />
       <div className="max-w-7xl mx-auto flex-col">
-        <CastWrapper
-          isLoading={movieCreditQuery.isLoading}
-          items={movieCreditQuery.data?.cast}
-        />
+        <div className="flex flex-col p-4">
+          <span className="mb-4 text-xl font-bold">Cast</span>
+          <CastWrapper
+            isLoading={movieCreditQuery.isLoading}
+            items={movieCreditQuery.data?.cast}
+          />
+        </div>
       </div>
     </div>
   )
