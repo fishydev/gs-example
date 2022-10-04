@@ -24,7 +24,7 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <div
-      className="bg-no-repeat bg-cover text-slate-50 h-screen md:h-[500px]"
+      className="bg-no-repeat bg-cover text-slate-50 min-h-fit md:min-h-[500px]"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url('https://image.tmdb.org/t/p/w780${backdrop}')`,
       }}

@@ -2,17 +2,24 @@ import { Card } from "../Elements/Card"
 import { Disclosure } from "@headlessui/react"
 import { ChevronRightIcon } from "@heroicons/react/solid"
 import { ReactNode } from "react"
+import clsx from "clsx"
 
 type DrawerProps = {
   title: string
   children: ReactNode
+  className?: string
 }
 export const Drawer = (props: DrawerProps) => {
-  const { children, title } = props
+  const { children, title, className } = props
   return (
     <div className="w-full">
       <Card>
-        <div className="mx-auto w-full rounded-sm bg-rose-600 font-bold">
+        <div
+          className={clsx(
+            "mx-auto w-full rounded-sm bg-rose-600 font-bold",
+            className
+          )}
+        >
           <Disclosure>
             {(open) => (
               <>
